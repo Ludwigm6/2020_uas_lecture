@@ -1,0 +1,140 @@
+---
+title: "Forest applications of UAS photogrammetry"
+author: "Marvin Ludwig, Environmental Informatics Marburg"
+date: "26.11.2020"
+output: "ioslides_presentation"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+opts_chunk$set(echo = FALSE,
+               out.width = "75%", 
+               fig.align = "center")
+library(grid)
+library(ggplot2)
+library(mapview)
+library(lidR)
+
+library(rgl)
+knitr::knit_hooks$set(webgl = hook_webgl)
+
+```
+
+## 
+
+**Marvin Ludwig**
+
+- Environmental monitoring and modelling
+- Remote Sensing 
+- Machine Learning
+- UAS based data
+
+
+```{r, fig.show = "hold", out.width = "30%", fig.align='right'}
+knitr::include_graphics(c("assets/logo_envinfo.jpg", "assets/Natur40.png"))
+```
+
+
+## UAS publications in agriculture and forest
+
+```{r, fig.cap="Raparelli & Bajocco (2019)"}
+knitr::include_graphics("assets/publications.png")
+```
+
+## UAS publications in forests
+
+### Technical
+- Structure from Motion in forests (Seifert et al. 2019)
+- Difficulties (Iglhaut et al. 2019)
+- Workflows (Ludwig et al. 2020)
+
+```{r}
+knitr::include_graphics("assets/flight_altitude.png")
+```
+
+## UAS publications in forests
+
+### Forest inventory
+- canopy height, stem density, biomass...
+
+```{r, fig.cap = "Wallace et al. 2016", out.width="50%"}
+knitr::include_graphics("assets/side_transect.png")
+```
+
+
+
+## UAS publications in forests
+
+### Forest health
+
+```{r, fig.cap="Puliti et al. 2019", out.width="50%"}
+knitr::include_graphics("assets/puliti_stump.png")
+```
+
+## UAS publications in forests
+
+```{r, fig.cap="Hese et al. 2019", out.width="50%"}
+knitr::include_graphics("assets/timeseries_green_red.png")
+```
+
+
+# Goal: Utilizing UAS for operational application in forestry
+
+
+## Study Area
+
+
+```{r}
+StudyArea = sf::st_read("data/mof_halfmoon.gpkg", quiet = TRUE)
+mapview::mapview(StudyArea, fill = NA, color = "red", lwd = 2)
+```
+
+
+## Study Area
+
+```{r, fig.cap="3DR Solo in the Marburg Open Forest"}
+knitr::include_graphics("assets/field_uav.png")
+```
+
+
+## Study Area
+
+```{r, fig.cap="Ground station setup in the Marburg Open Forest with pilot Simon"}
+knitr::include_graphics("assets/field_simon.png")
+```
+
+## High resolution RGB: 2020-10-26
+
+```{r}
+knitr::include_graphics("assets/2020_10_26_rgb.png")
+```
+
+## High resolution time series 2020
+
+```{r}
+knitr::include_graphics("assets/panel_details.png")
+```
+
+## 3D Pointcloud: 2020-09-02
+
+
+```{r, webgl = TRUE, message=FALSE, warning=FALSE}
+#pc = readLAS("data/2020_09_02_densecloud_5p.laz")
+#plot(pc, bg = "white", color= "RGB")
+```
+
+## 3D Pointcloud: 2020-11-12
+
+```{r, webgl = TRUE, message=FALSE, warning=FALSE}
+#pc = readLAS("data/2020_11_12_densecloud_5p.laz")
+#plot(pc, bg = "white", color= "RGB")
+```
+
+
+
+
+
+
+
+
