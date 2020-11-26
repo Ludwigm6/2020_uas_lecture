@@ -120,15 +120,15 @@ knitr::include_graphics("assets/panel_details.png")
 
 
 ```{r, webgl = TRUE, message=FALSE, warning=FALSE}
-#pc = readLAS("data/2020_09_02_densecloud_5p.laz")
-#plot(pc, bg = "white", color= "RGB")
+pc = readLAS("data/2020_09_02_densecloud_5p.laz")
+plot(pc, bg = "white", color= "RGB")
 ```
 
 ## 3D Pointcloud: 2020-11-12
 
 ```{r, webgl = TRUE, message=FALSE, warning=FALSE}
-#pc = readLAS("data/2020_11_12_densecloud_5p.laz")
-#plot(pc, bg = "white", color= "RGB")
+pc = readLAS("data/2020_11_12_densecloud_5p.laz")
+plot(pc, bg = "white", color= "RGB")
 ```
 
 
