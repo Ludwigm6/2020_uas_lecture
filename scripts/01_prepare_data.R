@@ -14,8 +14,12 @@ rgb = aggregate(rgb, fact = 2, fun = mean)
 rgb
 
 # calculate spectral indices
+sr1 = rgb[[1]] / rgb[[2]]
+plot(sr1)
 
-rgbInd = Rsenal2::rgbIndices(rgb)
+source("scripts/rgbIndices.R")
+
+rgbInd = rgbIndices(rgb)
 
 rgbInd$SR1 = rgb[[1]] / rgb[[2]]
 rgbInd$SR2 = rgb[[1]] / rgb[[3]]

@@ -18,8 +18,8 @@ plot(tree_health, add = TRUE)
 ?extract
 rgbIndEx = extract(rgbInd, tree_health, df = TRUE)
 
+# add class to extracted data
 lut = data.frame(ID = seq(20), state = tree_health$state)
-
 rgbIndEx = merge(rgbIndEx, lut, by = "ID")
 
 saveRDS(rgbIndEx, "data/run/training_data.RDS")
